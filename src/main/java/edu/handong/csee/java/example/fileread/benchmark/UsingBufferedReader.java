@@ -8,14 +8,15 @@ import java.io.*;
 public class UsingBufferedReader {
     public static void main(String[] args) throws IOException {
     	
-    	File input = new File(args[0]);
+    	File input1 = new File(args[0]);
+    	File input2 = new File(args[1]);
 
         //-------------- Test reading 1 MB file. --------------------
 
         StopWatch.start();
 
         // BufferedReader inputStream= new BufferedReader(new FileReader(DumpDataWriter.input1MB));
-        BufferedReader inputStream= new BufferedReader(new FileReader(input));
+        BufferedReader inputStream= new BufferedReader(new FileReader(input1));
         while (inputStream.read()!=-1){}
 
         long duration = StopWatch.stop();
@@ -27,8 +28,9 @@ public class UsingBufferedReader {
         //-------------- Test reading 10 MB file. --------------------
 
         StopWatch.start();
-
-        BufferedReader inputStream2= new BufferedReader(new FileReader(DumpDataWriter.input10MB));
+        
+        BufferedReader inputStream2= new BufferedReader(new FileReader(input2));
+        // BufferedReader inputStream2= new BufferedReader(new FileReader(DumpDataWriter.input10MB));
         while (inputStream2.read()!=-1){}
 
         long duration2 = StopWatch.stop();
